@@ -31,10 +31,12 @@ print(point1.geom_type)
 # YOUR CODE HERE 2 to define create_line_geom()
 #define create_line_geom
 def create_line_geom(points):
-  assert type(points)=='list',"Input should be a list!"
-  assert points.len()>=2,"LineString object requires at least two Points!"
+  assert type(points)==list,"Input should be a list!"
+  assert len(points)>=2,"LineString object requires at least two Points!"
   for i in points:  
     assert i.geom_type=='Point',"All list values should be shapely Point objcts!"
+  line=LineString([points[0],points[1]])
+  return line
 
 
 
@@ -42,7 +44,10 @@ def create_line_geom(points):
 
 line1 = None
 # YOUR CODE HERE 3 to define two points and store the result in line1
-
+#make line by given points
+a=Point(45.2,22.34)
+b=Point(100.22,-3.20)
+line1=create_line_geom([a,b])
 
 # CODE FOR TESTING YOUR SOLUTION
 print(line1)
@@ -77,7 +82,7 @@ except Exception as e:
 # Demonstrate the usage of the function. For example, create a Polygon with three points: `(45.2, 22.34)`, `(100.22, -3.20)` & `(70.0, 10.20)`.
 
 # YOUR CODE HERE 5 to define poly1 with three points
-poly1 = 
+#!poly1 = 
 
 # CODE FOR TESTING YOUR SOLUTION
 print(poly1)
