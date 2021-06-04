@@ -159,8 +159,6 @@ def get_area(geom):
 
 
 # Test and demonstrate the usage of the function:
-get_area(poly1)
-
 # CODE FOR TESTING YOUR SOLUTION
 area = get_area(poly1)
 print(round(area, 2))
@@ -182,7 +180,13 @@ except Exception as e:
 
 
 #  YOUR CODE HERE 9 to define get_length()
-
+#define get_length
+def get_length(geom):
+  assert type(geom) in (LineString,Polygon),"'geom' should be either LineString or Polygon!"
+  if type(geom)==LineString:
+    return geom.length
+  if type(geom)==Polygon:
+    return geom.exterior.length
 # Test and demonstrate the usage of the function:
 
 get_length(poly1)
