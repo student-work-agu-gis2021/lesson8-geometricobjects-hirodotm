@@ -13,7 +13,8 @@
 import pandas as pd 
 
 #Check how many rows and columns there are:
-data
+#read the file
+data=pd.read_csv("data/travelTimes_2015_Helsinki.txt",delim_whitespace=True)
 
 # CODE FOR TESTING YOUR SOLUTION
 
