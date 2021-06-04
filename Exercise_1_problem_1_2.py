@@ -9,7 +9,7 @@
 #    
 
 
-from shapely.geometry import Point, LineString, Polygon
+from shapely.geometry import Point, LineString, Polygon 
 #YOUR CODE HERE 1 to define create_point_geom()
 #define create_point_geom()
 def create_point_geom(x_coord,y_coord):
@@ -120,9 +120,9 @@ except Exception as e:
 # 
 
 #  YOUR CODE HERE 6 to define get_centroid()
-#define get_centroid by
+#define get_centroid by using centroid
 def get_centroid(geom):
-  assert geom.geom_type=='Point' or geom.geom_type=='LineString' or geom.geom_type=='Polygon',"Input should be a Shapely geometry!"
+  assert type(geom) in (Point ,LineString,Polygon),"Input should be a Shapely geometry!"
   return geom.centroid
 
 
@@ -130,8 +130,8 @@ def get_centroid(geom):
 # 
 
 #  YOUR CODE HERE 7 to define some objects
+#test my function get_centroid
 poly1=create_poly_geom([(0,0),(20,0),(10,30)])
-
 # CODE FOR TESTING YOUR SOLUTION
 centroid = get_centroid(poly1)
 print(centroid)
@@ -152,6 +152,10 @@ except Exception as e:
 #    - Inside the function, you should first check with `assert` -functionality that the input is a Shapely Polygon geometry (see [lesson 6](https://geo-python.github.io/site/lessons/L6/interpreting-errors.html#assertions) and [hints](https://automating-gis-processes.github.io/site/develop/lessons/L1/exercise-1.html#hints)). If something else than a list is passed for the function, you should return an Error message: `"Input should be a Shapely Polygon -object!"`
 
 # YOUR CODE HERE 8 to define get_area()
+def get_area(geom):
+   assert geom.geom_type=='Polygon',"Input should be a Shapely Polygon -object!"
+   return geom.area
+
 
 # Test and demonstrate the usage of the function:
 get_area(poly1)
