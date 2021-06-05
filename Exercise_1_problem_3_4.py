@@ -14,7 +14,7 @@ import pandas as pd
 
 #Check how many rows and columns there are:
 #read the file
-data=pd.read_csv("data/travelTimes_2015_Helsinki.txt",delim_whitespace=True)
+data=pd.read_csv("data/travelTimes_2015_Helsinki.txt",delimiter=';')
 
 # CODE FOR TESTING YOUR SOLUTION
 
@@ -26,6 +26,8 @@ print(data.head())
 # 
 
 # YOUR CODE HERE 2 to set `data`
+#set data
+data=data[['from_x','from_y','to_x','to_y']]
 
 # CODE FOR TESTING YOUR SOLUTION
 print(list(data.columns))
