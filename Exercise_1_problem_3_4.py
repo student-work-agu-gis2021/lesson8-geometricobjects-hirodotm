@@ -160,7 +160,18 @@ print("Total length of all lines is", round(total_length, 2))
 # **Note: avoid using the same variable names as earlier inside your functions!** Functions are often defined at the top of the script file (or jupyter notebook), and now that we have them here at the very end you might accidentally alter an existing variable inside your functions. To avoid this, alter the variable names inside your own functions if you re-use code from this notebook. 
 
 # YOUR CODE HERE 8 to define create_od_lines() and calculate_total_distance()
+#define create_od_lines and calculate_total_distance
+def create_od_lines(o_points,d_points):
+  lines=[]
+  for p in range(len(o_points)):
+    lines.append(LineString([o_points[p],d_points[p]]))
+  return lines
 
+def calculate_total_distance(od_lines):
+  total_length=0
+  for l in lines:
+    total_length=total_length+l.length
+  return total_length
 
 # CODE FOR TESTING YOUR SOLUTION
 
